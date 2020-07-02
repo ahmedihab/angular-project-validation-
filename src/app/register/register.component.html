@@ -1,0 +1,48 @@
+
+    <h2 class="text-danger text-center"> register </h2>
+    <form [formGroup]="myform" (ngSubmit)="getData(myform)" >
+
+        <div class="form-group">
+            <label> frist Name : </label>
+            <input  formControlName="firstName"  class="form-control"  type="text">
+        </div>
+
+        <div *ngIf="myform.get('firstName').invalid==true && myform.get('firstName').touched == true " class="alert alert-danger" role="alert" >
+            firstName is Invaliad
+       </div>
+        
+        <div class="form-group">
+            <label> last Name : </label>
+            <input  formControlName="lastName"  class="form-control"  type="text">
+        </div>
+
+        <div *ngIf="myform.get('lastName').invalid==true && myform.get('lastName').touched == true " class="alert alert-danger" role="alert" >
+             lastName is Invaliad
+        </div>
+   
+
+        
+        <div class="form-group">
+            <label> E-mail : </label>
+            <input  formControlName="email" class="form-control"  type="email">
+        </div>
+
+        <div *ngIf="myform.get('email').invalid==true && myform.get('email').touched == true " class="alert alert-danger" role="alert" >
+            E-mail is Invaliad
+       </div>
+        
+        <div class="form-group">
+            <label> password : </label>
+            <input formControlName="password"   class="form-control"  type="password">
+        </div>
+
+        <div *ngIf="myform.get('password').invalid==true && myform.get('password').touched == true " class="alert alert-danger" role="alert" >
+            password is Invaliad
+       </div>
+
+        <div class="text-center"> 
+        <button [disabled]="myform.invalid ==true" type="submit" class="btn btn-danger " >submit </button>
+    </div>
+    </form>
+
+   
